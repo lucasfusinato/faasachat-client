@@ -56,7 +56,7 @@ public class AddContactRequestBuilder implements RequestBuilder {
      */
     @Override
     public void buildMethod() {
-        request.setMethod("addContacts");
+        request.setMethod("addContact");
     }
 
     /**

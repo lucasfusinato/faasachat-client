@@ -56,7 +56,7 @@ public class RemoveContactRequestBuilder implements RequestBuilder {
      */
     @Override
     public void buildMethod() {
-        request.setMethod("removeContacts");
+        request.setMethod("removeContact");
     }
 
     /**

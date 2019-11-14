@@ -53,6 +53,8 @@ public class SocketRequestExecutor implements RequestExecutor {
             writer.println(request);
             writer.flush();
             
+            System.out.println("Client Send --> " + request);
+            
             while(true) {
                 responseData = reader.readLine();
                 if(!responseData.isEmpty()) {
@@ -69,6 +71,7 @@ public class SocketRequestExecutor implements RequestExecutor {
                 //Do nothing
             }
         }
+        System.out.println("Client Receive --> " + response);
         callback.call(response);
     }
 

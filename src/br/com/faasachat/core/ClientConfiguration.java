@@ -55,4 +55,20 @@ public class ClientConfiguration {
         configuration.setParameter("serverPort", serverPort);
     }
 
+    /**
+     * Defines if application must be display errors in console.
+     * @return
+     */
+    public Boolean getDisplayErrors() {
+        return configuration.getParameter("displayErrors", Boolean.class);
+    }
+
+    /**
+     * Defines if application must be display errors in console.
+     * @param displayErrors
+     */
+    public void setDisplayErrors(Boolean displayErrors) {
+        configuration.setParameter("displayErrors", displayErrors);
+    }
+
 }

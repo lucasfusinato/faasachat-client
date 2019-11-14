@@ -68,7 +68,7 @@ public class Application {
      */
     public ExceptionCatcher getExceptionCatcher() {
         if(exceptionCatcher == null) {
-            exceptionCatcher = new ExceptionCatcher(); 
+            exceptionCatcher = new ExceptionCatcher(configuration.getDisplayErrors()); 
         }
         return exceptionCatcher;
     }

@@ -36,6 +36,14 @@ public class Session {
     private String token;
     
     /**
+     * Creates sesion instance with token.
+     * @param token
+     */
+    public Session(String token) {
+        this.token = token;
+    }
+
+    /**
      * Returns session id.
      * @return
      */

@@ -1,0 +1,6 @@
+{
+	"parameters": {
+		"serverHost": "localhost",
+		"serverPort": 8080
+	}
+}

@@ -2,6 +2,7 @@ package br.com.faasachat.domain.model;
 
 import java.util.Map;
 
+import br.com.faasachat.api.builder.RequestBuilder;
 import br.com.faasachat.domain.adapter.GsonAdapter;
 import br.com.faasachat.domain.utils.Configuration;
 import br.com.faasachat.domain.utils.Parameter;
@@ -44,7 +45,37 @@ public class Request implements Parameter {
      * @param json
      */
     public Request(String json) {
-        Request request = GsonAdapter.getInstance().fromJson(json, Request.class);
+        this();
+        this.from(GsonAdapter.getInstance().fromJson(json, Request.class));
+    }
+
+    /**
+     * Instantiates request from builder.
+     * @param requestBuilder
+     */
+    public Request(RequestBuilder requestBuilder) {
+        this();
+        requestBuilder.reset();
+        requestBuilder.buildResource();
+        requestBuilder.buildMethod();
+        requestBuilder.buildParameters();
+        this.from(requestBuilder.getRequest());
+    }
+    
+    /**
+     * Instantiates request from another request.
+     * @param request
+     */
+    public Request(Request request) {
+        this();
+        this.from(request);
+    }
+
+    /**
+     * Sets request data from another request.
+     * @param request
+     */
+    public void from(Request request) {
         this.setResource(request.getResource());
         this.setMethod(request.getMethod());
         this.setParameters(request.getParameters());

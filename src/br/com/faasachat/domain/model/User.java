@@ -32,6 +32,11 @@ public class User {
      * User year of birth.
      */
     private int yearOfBirth;
+    
+    /**
+     * Defines if user is online.
+     */
+    private boolean online;
 
     /**
      * Returns user id.
@@ -111,6 +116,30 @@ public class User {
      */
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
+    }
+    
+    /**
+     * Returns if user is online.
+     * @return
+     */
+    public boolean getOnline() {
+        return online;
+    }
+
+    /**
+     * Returns if user is online.
+     * @return
+     */
+    public boolean isOnline() {
+        return online;
+    }
+    
+    /**
+     * Defines if user is online.
+     * @param online
+     */
+    public void setOnline(boolean online) {
+        this.online = online;
     }
 
     /**

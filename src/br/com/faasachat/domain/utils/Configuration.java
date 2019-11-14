@@ -54,7 +54,7 @@ public class Configuration implements Parameter {
      */
     @Override
     public <T> T getParameter(String parameter, Class<T> classOfT) {
-        return GsonAdapter.getInstance().fromJson(GsonAdapter.getInstance().toJson(parameter), classOfT);
+        return GsonAdapter.getInstance().fromJson(GsonAdapter.getInstance().toJson(parameters.get(parameter)), classOfT);
     }
 
     /**

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.faasachat.api.builder;
 
 import static org.junit.Assert.*;

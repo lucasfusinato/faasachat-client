@@ -16,10 +16,16 @@ public class Response {
     private boolean success;
     
     /**
+     * Response data.
+     */
+    private Object data;
+    
+    /**
      * Instantiates a response.
      */
     public Response() {
-        this.success = false;
+        this.setSuccess(false);
+        this.setData(null);
     }
 
     /**
@@ -29,6 +35,7 @@ public class Response {
     public Response(String json) {
         Response response = GsonAdapter.getInstance().fromJson(json, Response.class);
         this.setSuccess(response.getSuccess());
+        this.setData(response.getData());
     }
 
     /**
@@ -36,7 +43,8 @@ public class Response {
      * @param e
      */
     public Response(Exception e) {
-        this.success = false;
+        this.setSuccess(false);
+        this.setData(e);
     }
 
     /**
@@ -48,11 +56,45 @@ public class Response {
     }
 
     /**
+     * Returns success response.
+     * @return
+     */
+    public boolean isSuccess() {
+        return success;
+    }
+
+    /**
      * Defines success response.
      * @param success
      */
     public void setSuccess(boolean success) {
         this.success = success;
     }
+
+    /**
+     * Returns resposne data.
+     * @return
+     */
+    public Object getData() {
+        return data;
+    }
     
+    /**
+     * Returns response data.
+     * @param classOfT
+     * @return
+     */
+    public <T> T getData(Class<T> classOfT) {
+        return GsonAdapter.getInstance().fromJson(GsonAdapter.getInstance().toJson(data), classOfT);
+    }
+    
+    /**
+     * Defines resposne data.
+     * @param data
+     * @param data
+     */
+    public void setData(Object data) {
+        this.data = data;
+    }
+
 }

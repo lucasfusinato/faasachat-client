@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.faasachat.domain.model.Configuration;
+import br.com.faasachat.domain.utils.Configuration;
 
 /**
  * Test class to client configuration proxy class.

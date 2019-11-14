@@ -65,8 +65,8 @@ public class SocketRequestExecutor implements RequestExecutor {
         } finally {
             try {
                 socket.close();
-            } catch (IOException e) {
-                //Does nothing
+            } catch (NullPointerException | IOException e) {
+                //Do nothing
             }
         }
         callback.call(response);

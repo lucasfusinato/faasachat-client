@@ -1,6 +1,6 @@
 package br.com.faasachat.core;
 
-import br.com.faasachat.domain.model.Configuration;
+import br.com.faasachat.domain.utils.Configuration;
 
 /**
  * Proxy to access client configurations from a common configuration object.
@@ -44,7 +44,7 @@ public class ClientConfiguration {
      * @return the serverPort
      */
     public Integer getServerPort() {
-        return configuration.getParameter("serverHost", Integer.class);
+        return configuration.getParameter("serverPort", Integer.class);
     }
 
     /**

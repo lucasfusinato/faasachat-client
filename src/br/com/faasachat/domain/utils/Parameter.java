@@ -10,14 +10,38 @@ import java.util.Map;
  */
 public interface Parameter {
     
+    /**
+     * Returns all parameters.
+     * @return
+     */
     public Map<String, Object> getParameters();
     
+    /**
+     * Defines all parameters.
+     * @param parameters
+     */
     public void setParameters(Map<String, Object> parameters);
     
+    /**
+     * Returns a specific parameter value.
+     * @param parameter
+     * @return
+     */
     public Object getParameter(String parameter);
     
+    /**
+     * Returns a specific parameter value.
+     * @param parameter
+     * @param classOfT
+     * @return
+     */
     public <T> T getParameter(String parameter, Class<T> classOfT);
     
+    /**
+     * Defines a specific parameter value.
+     * @param parameter
+     * @param value
+     */
     public void setParameter(String parameter, Object value);
 
 }

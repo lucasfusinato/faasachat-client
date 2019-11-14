@@ -3,7 +3,7 @@ package br.com.faasachat.core;
 import br.com.faasachat.api.executor.RequestExecutor;
 import br.com.faasachat.api.executor.SocketRequestExecutor;
 import br.com.faasachat.api.executor.ThreadRequestExecutor;
-import br.com.faasachat.domain.model.ConfigurationReader;
+import br.com.faasachat.domain.utils.ConfigurationReader;
 
 /**
  * Main application class.
@@ -27,6 +27,11 @@ public class Application {
      * Default request executor.
      */
     private RequestExecutor requestExecutor;
+
+    /**
+     * Default exception catcher.
+     */
+    private ExceptionCatcher exceptionCatcher;
     
     /**
      * Returns self unique instance.
@@ -55,6 +60,17 @@ public class Application {
             requestExecutor = new ThreadRequestExecutor(new SocketRequestExecutor(configuration.getServerHost(), configuration.getServerPort()));
         }
         return requestExecutor;
+    }
+
+    /**
+     * Returns default exception catcher.
+     * @return
+     */
+    public ExceptionCatcher getExceptionCatcher() {
+        if(exceptionCatcher == null) {
+            exceptionCatcher = new ExceptionCatcher(); 
+        }
+        return exceptionCatcher;
     }
     
 }

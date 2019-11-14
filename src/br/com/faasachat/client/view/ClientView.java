@@ -15,6 +15,15 @@ import br.com.faasachat.client.view.frames.LoginFrame;
 import br.com.faasachat.client.view.frames.UserFrame;
 import br.com.faasachat.core.Application;
 
+<<<<<<< HEAD
+=======
+/**
+ * 
+ * @author João Victor Arruda
+ * @since 13/11/2019
+ * @version 1.0
+ */
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
 @SuppressWarnings("serial")
 public class ClientView extends JFrame implements ClientControllerObserver {
     
@@ -32,11 +41,15 @@ public class ClientView extends JFrame implements ClientControllerObserver {
         setSize(new Dimension(600, 400));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+<<<<<<< HEAD
         if(JOptionPane.showConfirmDialog(null, "Do you have an account?", "Faasachat", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             openLogin(null);
         } else {
             openSignup();
         }
+=======
+        openLogin(null);
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
     }
 
     @Override
@@ -82,7 +95,10 @@ public class ClientView extends JFrame implements ClientControllerObserver {
         frame.setVisible(true);
         panel.add(frame);
         setContentPane(panel);
+<<<<<<< HEAD
         pack();
+=======
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
     }
     
 }

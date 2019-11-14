@@ -1,5 +1,6 @@
 package br.com.faasachat.client.view.frames;
 
+<<<<<<< HEAD
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -15,13 +16,37 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
+=======
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+
+import br.com.faasachat.client.controller.observer.ContactsListObserver;
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
 import br.com.faasachat.client.controller.strategy.AddContactStrategy;
 import br.com.faasachat.client.controller.strategy.RemoveContactStrategy;
 import br.com.faasachat.client.view.ContactsTableModel;
 import br.com.faasachat.core.Application;
 
+<<<<<<< HEAD
 @SuppressWarnings("serial")
 public class ContactsFrame extends JInternalFrame {
+=======
+/**
+ * 
+ * @author João Victor Arruda
+ * @since 13/11/2019
+ * @version 1.0
+ */
+@SuppressWarnings("serial")
+public class ContactsFrame extends JInternalFrame implements ContactsListObserver {
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
 
     private AddContactStrategy addContactStrategy;
     private RemoveContactStrategy removeContactStrategy;
@@ -76,6 +101,7 @@ public class ContactsFrame extends JInternalFrame {
             }
         });
     }
+<<<<<<< HEAD
     
     private void addComponents() {
         JPanel pnContent = new JPanel();
@@ -91,6 +117,19 @@ public class ContactsFrame extends JInternalFrame {
         
         setContentPane(pnContent);
         pack();
+=======
+
+    private void addComponents() {
+        setLayout(new FlowLayout());
+        add(btnAddContact);
+        add(btnRemoveContact);
+        add(table);
+    }
+    
+    @Override
+    public void updateContactsList() {
+        tableModel.update();
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
     }
     
 }

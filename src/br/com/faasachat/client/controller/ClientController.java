@@ -1,6 +1,9 @@
 package br.com.faasachat.client.controller;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
 import java.util.List;
 
 import br.com.faasachat.api.builder.AddContactRequestBuilder;
@@ -11,13 +14,25 @@ import br.com.faasachat.api.builder.SignupRequestBuilder;
 import br.com.faasachat.api.builder.UpdateProfileRequestBuilder;
 import br.com.faasachat.api.executor.RequestExecutor;
 import br.com.faasachat.api.executor.RequestExecutorCallback;
+<<<<<<< HEAD
 import br.com.faasachat.api.executor.SessionRequestExecutor;
 import br.com.faasachat.domain.adapter.GsonAdapter;
+=======
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
 import br.com.faasachat.domain.model.Request;
 import br.com.faasachat.domain.model.Response;
 import br.com.faasachat.domain.model.Session;
 import br.com.faasachat.domain.model.User;
 
+<<<<<<< HEAD
+=======
+/**
+ * 
+ * @author João Victor Arruda
+ * @since 13/11/2019
+ * @version 1.0
+ */
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
 public class ClientController implements ClientControllerInterface {
 
     private RequestExecutor requestExecutor;
@@ -26,13 +41,20 @@ public class ClientController implements ClientControllerInterface {
     private List<User> contacts;
 
     public ClientController(RequestExecutor requestExecutor) {
+<<<<<<< HEAD
         this(requestExecutor, null);
+=======
+        this.requestExecutor = requestExecutor;
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
     }
     
     public ClientController(RequestExecutor requestExecutor, ClientControllerObserver observer) {
         this.requestExecutor = requestExecutor;
         this.observer = observer;
+<<<<<<< HEAD
         this.contacts = new ArrayList<>();
+=======
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
     }
 
     @Override
@@ -44,7 +66,11 @@ public class ClientController implements ClientControllerInterface {
                         if (response.isSuccess()) {
                             session = response.getData(Session.class);
                             observer.openHome("Wellcome " + session.getUser().getNickname());
+<<<<<<< HEAD
                             new ClientControllerUpdateContactsThread(ClientController.this).start();;
+=======
+                            getContacts();
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
                         } else {
                             observer.catchException(response.getData(Exception.class));
                         }
@@ -69,7 +95,12 @@ public class ClientController implements ClientControllerInterface {
 
     @Override
     public void updateProfile(String nickname, String email, String password, int yearOfBirth) {
+<<<<<<< HEAD
         new SessionRequestExecutor(requestExecutor, session).execute(new Request(new UpdateProfileRequestBuilder(session.getUser().getId(), nickname, email, password, yearOfBirth)),
+=======
+        requestExecutor.execute(new Request(
+                new UpdateProfileRequestBuilder(session.getUser().getId(), nickname, email, password, yearOfBirth)),
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
                 new RequestExecutorCallback() {
                     @Override
                     public void call(Response response) {
@@ -84,6 +115,7 @@ public class ClientController implements ClientControllerInterface {
 
     @Override
     public void getContacts() {
+<<<<<<< HEAD
         new SessionRequestExecutor(requestExecutor, session).execute(new Request(new GetContactsRequestBuilder(session.getUser().getId())),
                 new RequestExecutorCallback() {
                     @Override
@@ -95,6 +127,15 @@ public class ClientController implements ClientControllerInterface {
                             for(Object object : data) {
                                 contacts.add(GsonAdapter.getInstance().fromJson(GsonAdapter.getInstance().toJson(object), User.class));
                             }
+=======
+        requestExecutor.execute(new Request(new GetContactsRequestBuilder(session.getUser().getId())),
+                new RequestExecutorCallback() {
+                    @SuppressWarnings("unchecked")
+                    @Override
+                    public void call(Response response) {
+                        if (response.isSuccess()) {
+                            contacts = (List<User>) response.getData(List.class);
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
                             observer.updateContacts();
                         } else {
                             observer.catchException(response.getData(Exception.class));
@@ -105,7 +146,11 @@ public class ClientController implements ClientControllerInterface {
 
     @Override
     public void addContact(String nickname) {
+<<<<<<< HEAD
         new SessionRequestExecutor(requestExecutor, session).execute(new Request(new AddContactRequestBuilder(session.getUser().getId(), nickname)),
+=======
+        requestExecutor.execute(new Request(new AddContactRequestBuilder(session.getUser().getId(), nickname)),
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
                 new RequestExecutorCallback() {
                     @Override
                     public void call(Response response) {
@@ -120,7 +165,11 @@ public class ClientController implements ClientControllerInterface {
 
     @Override
     public void removeContact(int contactIndex) {
+<<<<<<< HEAD
         new SessionRequestExecutor(requestExecutor, session).execute(new Request(new RemoveContactRequestBuilder(session.getUser().getId(), contacts.get(contactIndex).getNickname())),
+=======
+        requestExecutor.execute(new Request(new RemoveContactRequestBuilder(session.getUser().getId(), contacts.get(contactIndex).getNickname())),
+>>>>>>> f69c15242aa715388a80b5103c0f0a35e428ac43
                 new RequestExecutorCallback() {
                     @Override
                     public void call(Response response) {

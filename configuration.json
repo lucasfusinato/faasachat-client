@@ -1,7 +1,0 @@
-{
-	"parameters": {
-		"serverHost"	: "localhost",
-		"serverPort"	: 56000,
-		"displayErrors"	: true
-	}
-}

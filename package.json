@@ -1,0 +1,22 @@
+{
+  "name": "faasachat-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasfusinato/faasachat-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasfusinato/faasachat-client/issues"
+  },
+  "homepage": "https://github.com/lucasfusinato/faasachat-client#readme",
+  "dependencies": {}
+}

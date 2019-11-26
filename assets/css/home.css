@@ -1,40 +1,3 @@
-:root {
-    --main-bg-color: #f9f9f9;
-    --field-bd-color: #cccccc;
-    --field-bg-color: #ffffff;
-    --button-bd-color: #005c8e;
-    --button-bg-color: #006fab;
-    --button-color: #ffffff;
-    --button-bd-color-hv: #0876b1;
-    --button-bg-color-hv: #0e86c7;
-    --button-color-hv: #ffffff;
-    --error-bg-color: #ffe4e4;
-    --error-bd-color: #b94242;
-    --error-color: #b94242;
-    --error-bg-color-hv: #ffd6d6;
-    --error-bd-color-hv: #b94242;
-    --error-color-hv: #b94242;
-    --block-bg-color: #0000052a;
-    --loader-color: #000000;
-    --font-color-secondary: #474747;
-}
-
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1em;
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    background: var(--main-bg-color);
-}
-
 .container {
     height: 100%;
     padding: 5px;
@@ -138,23 +101,4 @@ body {
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
-}
-
-.block-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: var(--block-bg-color);
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.block-container .lds-ripple div {
-    border-color: var(--loader-color);
-}
-
-.hide {
-    display: none;
 }

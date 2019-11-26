@@ -11,6 +11,13 @@ const password      = document.getElementById('password');
 const button        = document.getElementById('button');
 const notRegistered = document.getElementById('not-registered');
 
+password.addEventListener('keypress', function(event) {
+    if(event.keyCode === 13) {
+        password.blur();
+        button.click();
+    }
+});
+
 ipcRenderer.on('homeError', function(event, errorMessage) {
     errorContainer.innerHTML = errorMessage;
     blockContainer.classList.add('hide');

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faasachat</title>
+    <link rel="stylesheet" href="../../assets/css/loader.css">
+    <link rel="stylesheet" href="../../assets/css/faasachat.css">
+    <link rel="stylesheet" href="../../assets/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="home-container">
+            <div class="message-container error-container hide" id="error-container" title="Tap to close"></div>
+            <div class="message-container success-container hide" id="success-container" title="Tap to close"></div>
+            <form id="form" class="form" action="#" type="login">
+                <div class="field-group" signup="true">
+                    <label for="nickname" class="label">Nickname</label>
+                    <input type="text" name="nickname" id="nickname" class="field" minlength="4" maxlength="30">
+                </div>
+                <div class="field-group">
+                    <label for="email" class="label">E-mail</label>
+                    <input type="email" name="email" id="email" class="field" required="required">
+                </div>
+                <div class="field-group" signup="true">
+                    <label for="yearOfBirth" class="label">Year of birth</label>
+                    <input type="number" name="yearOfBirth" id="yearOfBirth" class="field" min="1889" max="2019">
+                </div>
+                <div class="field-group">
+                    <label for="password" class="label">Password</label>
+                    <input type="password" name="password" id="password" class="field" required="required">
+                </div>
+                <div class="button-group">
+                    <button type="button" id="button" class="button" title="Click to login">Login</button>
+                </div>
+            </form>
+            <div class="not-registered-container">
+                <span class="not-registered" id="not-registered">
+                    Not registered yet? <strong>Sign up now!</strong>
+                </span>
+            </div>
+        </div>
+        <div class="block-container hide" id="block-container">
+            <div class="lds-ripple" id="loader"><div></div><div></div></div>
+        </div>
+    </div>
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.container {
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container {
+    position: relative;
+    width: 300px;
+}
+
+.form[type="login"] [signup] {
+    display: none;
+}
+
+.not-registered-container {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 30px;
+}
+
+.not-registered-container:hover {
+    color: var(--font-color-secondary);
+}
+
+.not-registered {
+    cursor: pointer;
+}

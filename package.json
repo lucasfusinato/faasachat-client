@@ -1,0 +1,27 @@
+{
+  "name": "faasachat-client",
+  "productName": "Faasachat",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "portscanner": "^2.2.0",
+    "randomstring": "^1.1.5",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "electron": "^7.1.2",
+    "electron-packager": "^14.1.0"
+  }
+}
